@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JudicalGuides</title>
+    <!-- site icon -->
+    <link rel="icon" href="http://judicalguides.iceiy.com/images/JudicalGuidesLogo.png" type="image/png" />
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> 
+    <!-- site css -->
+    <style>
+        body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+
+/* Preloader Styles */
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, rgb(245, 255, 202) 0%, rgb(255, 219, 241) 48%, rgb(206, 246, 255) 100%); /* Light background for contrast */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+font-size: 30px;
+font-weight: 600;
+background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align:center;
+animation: bounce 0.6s infinite alternate;
+}
+
+
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+/* Content Styles */
+#content {
+    display: none;
+}
+
+.navbar-brand{
+font-size: 25px;
+font-weight: 600;
+background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.nav-item, .nav-link{
+    font-weight: 600;
+    color:black;
+    font-size: 18px;
+}
+.nav-item, .nav-link:hover{
+    font-weight: 600;
+    color:rgb(13, 0, 128);
+    font-size: 18px;
+}
+.dropdown-item{
+    font-weight: 600;
+    color:blue;
+    font-size: 18px;
+}
+.dropdown-item:hover{
+        font-weight: 600;
+        color:green;
+        font-size: 18px;
+}
+/* Landing Home Page */
+.jumbotron-full {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(212,252,255,1) 0%, rgba(253,215,255,1) 48%, rgba(252,255,200,1) 100%); /* Light background for contrast */
+    text-align: center;
+  }
+  .jumbotron-content {
+    max-width: 100%;
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  .brand-name-typewriter{
+    font-weight: 600;
+    font-size: 44px;
+    background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(15, end) infinite, blink-caret .75s step-end infinite;
+  }
+@keyframes typing {
+    from { width: 0; }
+    to { width: 8em; } /* Adjust width based on text length */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+    
+
+    /* Welcome Text */
+    .welcome{
+        font-weight: 600;
+        color: blue;
+        font-size: 44px;
+    }
+    p{
+        font-weight: 600; 
+    }
+
+    .card{
+        text-align:center;
+        margin-bottom: 20px;
+        color:#ffffff;
+        height: 200px;
+        font-weight:500;
+    }
+    
+    .card-1 { background-color: #ff0303; }
+    .card-2 { background-color: #4100d7; }
+    .card-3 { background-color: #00ad20; }
+    .card-4 { background-color: #dd009b; }
+    .card-5 { background-color: #8a4700; }
+    .card-6 { background-color: #000000; }
+    .card-7 { background-color: #013b54; }
+    .card-8 { background-color: #e69900; }
+    
+    input[type="checkbox"] {
+        width: 20px; /* Adjust width as needed */
+        height: 20px; /* Adjust height as needed */
+    }
+    /* Back To Top */
+    #back-to-top-btn {
+        display: none; /* Hide the button by default */
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 99; /* Ensure it stays on top of other content */
+        font-size: 36px;
+        border: none;
+        outline: none;
+        color: red;
+        cursor: pointer;
+        padding: 15px; 
+    }
+    
+    #back-to-top-btn:hover {
+        color: #0056b3;
+    }
+    
+    /* Footer */
+    .footer {
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+    }
+    .footer a {
+        color: rgb(10, 255, 251);
+    }
+    .footer h3 {
+        color: rgb(251, 255, 0);
+    }
+    .footer a:hover {
+        color: #49ff67;
+    }
+    </style>
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader">
+            <div class="dot"><img src="http://judicalguides.iceiy.com/images/JudicalGuidesLogo.png" height="50" width="60"> &nbsp; </div>
+            <div class="dot">JudicalGuides</div>
+        </div>
+    </div>
+
+    <div id="content">
+        <header>
+            <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="">
+                        <img src="http://judicalguides.iceiy.com/images/JudicalGuidesLogo.png" alt="Logo" width="50" height="35" class="d-inline-block align-text-top">
+                        JudicalGuides
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item">You Are Currently Log In As:</li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="/login">User</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sign Up</a>
+                                <ul class="dropdown-menu">
+                                    <li class="dropdown-item">You Are Currently Sign Up As:</li>
+                                    <li><hr class="dropdown-divider"></li>
+                                    <li><a class="dropdown-item" href="/register">User</a></li>
+                                    <li><hr class="dropdown-divider"></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-primary" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home">
+                <div class="container-fluid">
+                    <div class="jumbotron-full">
+                        <div class="jumbotron-content">
+                            <h1 class="display-4"><span class="welcome">Welcome to</span></h1>
+                            <p class="brand-name-typewriter">JudicalGuides</p>
+                            <p>An AI Powered Legal Research Platform.</p>
+                            <hr class="my-4">
+                            <a class="btn btn-outline-primary btn-lg" href="#about" role="button">About Us</a>
+                            <a class="btn btn-outline-dark btn-lg ms-2" href="#contact" role="button">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="container mt-5">
+                    <h2 class="mb-4">Contact Us</h2>
+                    <form action=" " method="POST">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label"><strong><i class="fa fa-user fa-lg"></i> Name</strong></label>
+                                    <input type="text" class="form-control" id="name" name="name" maxlength="60" placeholder="Enter your name" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label"><strong><i class="fa fa-envelope fa-lg"></i> Email Address</strong></label>
+                                    <input type="email" class="form-control" id="email" name="email" maxlength="50" placeholder="Enter your email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="mobile" class="form-label"><strong><i class="fa fa-phone fa-lg"></i> Mobile Number</strong></label>
+                                    <input type="tel" class="form-control" id="mobile" name="mobile" maxlength="10" minlength="10" placeholder="Enter your mobile number" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="contact_as" class="form-label"><strong><i class="fa fa-users fa-lg"></i> Contact As</strong></label>
+                                    <select id="contact_as" class="form-select" name="contact_as" required>
+                                        <option value="" disabled selected>Select</option>
+                                        <option value="User">User / Client</option>
+                                        <option value="Advocate">Advocate</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mb-3">
+                                    <label for="message" class="form-label"><strong><i class="fa fa-comment fa-lg"></i> Message</strong></label>
+                                    <textarea class="form-control" id="message" name="message" maxlength="250" rows="4" placeholder="Enter your message" required></textarea>
+                                    <br>
+                                    <input form-check-input mt-0" type="checkbox" required>&nbsp; I have read and agree to the <a href="terms_and_conditions.html" target="_blank">terms and conditions</a> of the JudicalGuides.</input>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                    <hr> <br>
+                    <!-- GOOGLE MAP -->
+                    <h2 class="mb-4">Locate Us</h2>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d236.3222539276908!2d73.94039953154817!3d18.61204901562834!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c426abe950f1%3A0xabecafd9c9680bd1!2sMarathwada%20Mitra%20Mandal&#39;s%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1691514630814!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe> 
+                </div>
+            </section>
+
+            <section id="footer">
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <center><img style="height:130px; width:150px;" src="http://judicalguides.iceiy.com/images/JudicalGuidesLogo.png" alt="Logo"></center> 
+                            </div>
+                            <div class="col-md-3">
+                                <h3>About Us</h3> 
+                                <p> 
+                                    JudicalGuides is the premier platform dedicated to connecting clients to the best advocates. 
+                                    Our mission is to bridge the gap between clients looking 
+                                    for talented advocates.
+                                </p> 
+                            </div>
+                            <div class="col-md-4">
+                                <h3>Contact Us</h3> 
+                                <ul class="list-unstyled"> 
+                                    <li><i class="fa fa-envelope fa-lg"></i> Email: <a href="mailto:contact.judicalguides@gmail.com">contact.judicalguides@gmail.com</a></li> 
+                                    <li><i class="fa fa-phone fa-lg"></i> Phone: 92849XXXXX</li> 
+                                    <li><i class="fa fa-location-dot fa-lg"></i>&nbsp; Address: Latur, Maharashtra, India</li>
+                                    <li><i class="fa fa-location-dot fa-lg"></i>&nbsp; Address: Pune, Maharashtra, India</li>  
+                                </ul> 
+                            </div>
+                            <div class="col-md-3">
+                                <h3>Connect With Us</h3>
+                                <ul class="list-inline footer-links"> 
+                                    <li class="list-inline-item"> 
+                                        <a href="https://facebook.com/"> 
+                                            <i class="fab fa-facebook fa-2xl"></i> 
+                                        </a> 
+                                    </li> 
+                                    <li class="list-inline-item"> 
+                                        <a href="https://instagram.com/"> 
+                                            <i class="fab fa-instagram fa-2xl"></i> 
+                                        </a> 
+                                    </li> 
+                                    <li class="list-inline-item"> 
+                                        <a href="https://linkedin.com/in/"> 
+                                            <i class="fab fa-linkedin fa-2xl"></i> 
+                                        </a> 
+                                    </li> 
+                                    <li class="list-inline-item"> 
+                                        <a href="https://facebook.com/"> 
+                                            <i class="fab fa-whatsapp fa-2xl"></i> 
+                                        </a> 
+                                    </li> 
+                                </ul> 
+                            </div>
+                            <hr>
+                            <div class="col-md-12"> 
+                                <p style="text-align:center;">Copyright <i class="fa-regular fa-copyright"></i> 2024 JudicalGuides. All rights reserved.</p> 
+                            </div> 
+                        </div>
+                    </div>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+    <!-- Back to top button -->
+    <i id="back-to-top-btn" class="fa fa-angle-up"></i>
+
+    <!-- JavaScript -->
+    <script src="js/loader.js"></script>
+    <script src="js/back_to_top.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    
+
+    <!-- Loader &  Back to Top -->
+    <script>
+        // Wait for 3 seconds and then hide preloader and show content
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+        document.getElementById('content').style.display = 'block';
+    }, 3000);
+});
+        document.addEventListener('DOMContentLoaded', function() {
+            var button = document.getElementById('back-to-top-btn');
+
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 100) { // Adjust the number to control when the button appears
+                    button.style.display = 'block';
+                } else {
+                    button.style.display = 'none';
+                }
+            });
+
+            button.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scrolling behavior
+                });
+            });
+        });
+    </script>
+</body>
+</html>

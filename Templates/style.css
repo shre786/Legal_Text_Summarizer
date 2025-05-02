@@ -1,0 +1,181 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500;
+}
+
+
+/* Preloader Styles */
+#preloader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(90deg, rgb(245, 255, 202) 0%, rgb(255, 219, 241) 48%, rgb(206, 246, 255) 100%); /* Light background for contrast */
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    flex-direction: column;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+font-size: 30px;
+font-weight: 600;
+background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+text-align:center;
+animation: bounce 0.6s infinite alternate;
+}
+
+
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+/* Content Styles */
+#content {
+    display: none;
+}
+
+.navbar-brand{
+font-size: 25px;
+font-weight: 600;
+background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.nav-item, .nav-link{
+    font-weight: 600;
+    color:black;
+    font-size: 18px;
+}
+.nav-item, .nav-link:hover{
+    font-weight: 600;
+    color:rgb(13, 0, 128);
+    font-size: 18px;
+}
+.dropdown-item{
+    font-weight: 600;
+    color:blue;
+    font-size: 18px;
+}
+.dropdown-item:hover{
+        font-weight: 600;
+        color:green;
+        font-size: 18px;
+}
+/* Landing Home Page */
+.jumbotron-full {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(212,252,255,1) 0%, rgba(253,215,255,1) 48%, rgba(252,255,200,1) 100%); /* Light background for contrast */
+    text-align: center;
+  }
+  .jumbotron-content {
+    max-width: 100%;
+    padding: 20px;
+    margin-bottom: 100px;
+  }
+  .brand-name-typewriter{
+    font-weight: 600;
+    font-size: 44px;
+    background: -webkit-radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 4s steps(15, end) infinite, blink-caret .75s step-end infinite;
+  }
+@keyframes typing {
+    from { width: 0; }
+    to { width: 8em; } /* Adjust width based on text length */
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+}
+    
+
+    /* Welcome Text */
+    .welcome{
+        font-weight: 600;
+        color: blue;
+        font-size: 44px;
+    }
+    p{
+        font-weight: 600; 
+    }
+
+    .card{
+        text-align:center;
+        margin-bottom: 20px;
+        color:#ffffff;
+        height: 200px;
+        font-weight:500;
+    }
+    
+    .card-1 { background-color: #ff0303; }
+    .card-2 { background-color: #4100d7; }
+    .card-3 { background-color: #00ad20; }
+    .card-4 { background-color: #dd009b; }
+    .card-5 { background-color: #8a4700; }
+    .card-6 { background-color: #000000; }
+    .card-7 { background-color: #013b54; }
+    .card-8 { background-color: #e69900; }
+    
+    input[type="checkbox"] {
+        width: 20px; /* Adjust width as needed */
+        height: 20px; /* Adjust height as needed */
+    }
+    /* Back To Top */
+    #back-to-top-btn {
+        display: none; /* Hide the button by default */
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 99; /* Ensure it stays on top of other content */
+        font-size: 36px;
+        border: none;
+        outline: none;
+        color: red;
+        cursor: pointer;
+        padding: 15px; 
+    }
+    
+    #back-to-top-btn:hover {
+        color: #0056b3;
+    }
+    
+    /* Footer */
+    .footer {
+        background-color: black;
+        color: white;
+        padding: 20px 0;
+    }
+    .footer a {
+        color: rgb(10, 255, 251);
+    }
+    .footer h3 {
+        color: rgb(251, 255, 0);
+    }
+    .footer a:hover {
+        color: #49ff67;
+    }
